@@ -6,15 +6,8 @@ import {
 } from '@/types/feedback';
 
 export const feedbackSchema = z.object({
-  studentName: z
-    .string()
-    .min(1, 'Name is required')
-    .max(100, 'Name must be under 100 characters'),
-  studentId: z
-    .string()
-    .max(50, 'Student ID must be under 50 characters')
-    .optional()
-    .or(z.literal('')),
+  studentName: z.string().optional().default('Anonymous'),
+  studentId: z.string().optional(),
   course: z.enum(CourseOptions, {
     error: 'Please select a course',
   }),

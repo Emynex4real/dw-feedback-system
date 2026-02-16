@@ -26,16 +26,6 @@ export function StudentInfoStep({ form }: StudentInfoStepProps) {
       </div>
 
       <div className="space-y-5">
-        <FormField label="Full Name" error={errors.studentName?.message} required htmlFor="studentName">
-          <input
-            id="studentName"
-            type="text"
-            placeholder="Enter your full name"
-            className={inputClass}
-            {...register('studentName')}
-          />
-        </FormField>
-
         <div className="grid grid-cols-2 gap-4">
             <FormField label="Course" error={errors.course?.message} required htmlFor="course">
             <SelectField
@@ -57,16 +47,6 @@ export function StudentInfoStep({ form }: StudentInfoStepProps) {
             />
             </FormField>
         </div>
-
-        <FormField label="Student ID" error={errors.studentId?.message} htmlFor="studentId">
-          <input
-            id="studentId"
-            type="text"
-            placeholder="Optional"
-            className={inputClass}
-            {...register('studentId')}
-          />
-        </FormField>
       </div>
     </div>
   );

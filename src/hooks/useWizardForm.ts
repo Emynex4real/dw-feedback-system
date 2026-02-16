@@ -5,7 +5,7 @@ import { feedbackSchema } from '@/schemas/feedbackSchema';
 import type { FeedbackFormData } from '@/types/feedback';
 
 const STEP_FIELD_NAMES: (keyof FeedbackFormData)[][] = [
-  ['studentName', 'studentId', 'course', 'cohort'],
+  ['course', 'cohort'],
   ['feedbackType', 'priority', 'message', 'isAnonymous'],
   [],
 ];
@@ -31,8 +31,8 @@ export function useWizardForm(
   const form = useForm<FeedbackFormData>({
     resolver: zodResolver(feedbackSchema) as unknown as Resolver<FeedbackFormData>,
     defaultValues: {
-      studentName: '',
-      studentId: '',
+      studentName: 'Anonymous',
+      studentId: undefined,
       course: undefined,
       cohort: '',
       feedbackType: undefined,
