@@ -12,7 +12,7 @@ export function StudentInfoStep({ form }: StudentInfoStepProps) {
   const { register, formState: { errors } } = form;
 
   // "Sleek" input classes
-  const inputClass = "w-full h-14 rounded-xl border border-gray-200 bg-gray-50/50 px-4 text-gray-900 placeholder:text-gray-400 focus:border-[#FF5500] focus:bg-white focus:ring-4 focus:ring-orange-500/10 transition-all duration-200 font-medium";
+  const inputClass = "w-full h-14 rounded-xl border border-gray-200 bg-gray-50/50 px-4 text-gray-900 placeholder:text-gray-400 focus:border-[#FF5500] focus:bg-white focus:ring-4 focus:ring-orange-500/10 transition-all duration-200 font-medium ";
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">

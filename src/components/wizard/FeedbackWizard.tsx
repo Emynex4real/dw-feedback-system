@@ -91,7 +91,7 @@ export function FeedbackWizard() {
             </div>
           )}
 
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="flex flex-col gap-3">
              {isLastStep ? (
                <Button
                  type="submit"
