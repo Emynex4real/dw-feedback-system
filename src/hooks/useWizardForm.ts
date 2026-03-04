@@ -5,8 +5,8 @@ import { feedbackSchema } from '@/schemas/feedbackSchema';
 import type { FeedbackFormData } from '@/types/feedback';
 
 const STEP_FIELD_NAMES: (keyof FeedbackFormData)[][] = [
-  ['course', 'cohort'],
-  ['feedbackType', 'priority', 'message', 'isAnonymous'],
+  ['course', 'branch'],
+  ['feedbackType', 'priority', 'message'],
   [],
 ];
 
@@ -34,11 +34,10 @@ export function useWizardForm(
       studentName: 'Anonymous',
       studentId: undefined,
       course: undefined,
-      cohort: '',
+      branch: '',
       feedbackType: undefined,
       priority: 'Low',
       message: '',
-      isAnonymous: false,
       ...defaultValues,
     },
     mode: 'onTouched',

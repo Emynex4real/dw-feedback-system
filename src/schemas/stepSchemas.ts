@@ -4,7 +4,7 @@ export const studentInfoSchema = feedbackSchema.pick({
   studentName: true,
   studentId: true,
   course: true,
-  cohort: true,
+  branch: true,
 });
 
 export const feedbackDetailsSchema = feedbackSchema.pick({
@@ -12,7 +12,6 @@ export const feedbackDetailsSchema = feedbackSchema.pick({
   priority: true,
   message: true,
   rating: true,
-  isAnonymous: true,
 });
 
 export { feedbackSchema as reviewSchema };

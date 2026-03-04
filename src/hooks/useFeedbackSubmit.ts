@@ -22,12 +22,8 @@ export function useFeedbackSubmit(): UseFeedbackSubmitReturn {
       setStatus('loading');
       setError(null);
 
-      const sanitizedData = formData.isAnonymous
-        ? { ...formData, studentName: 'Anonymous', studentId: undefined }
-        : formData;
-
       const payload = {
-        ...sanitizedData,
+        ...formData,
         metaData: collectMetadata(referralSource),
       };
 

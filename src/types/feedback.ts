@@ -4,6 +4,12 @@ export const CourseOptions = [
   'Product Design',
   'Data Science',
   'Cybersecurity',
+  'Digital Marketing',
+  'Graphic Design',
+  'AI Automation',
+  'Social Media Management',
+  'UI/UX Design',
+  'Project Management',
 ] as const;
 
 export type Course = (typeof CourseOptions)[number];
@@ -32,11 +38,10 @@ export interface FeedbackPayload {
   studentName: string;
   studentId?: string;
   course: Course;
-  cohort: string;
+  branch: string;
   feedbackType: FeedbackType;
   priority: Priority;
   message: string;
-  isAnonymous: boolean;
   metaData: FeedbackMetadata;
 }
 

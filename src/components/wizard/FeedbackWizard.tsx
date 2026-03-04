@@ -26,7 +26,7 @@ export function FeedbackWizard() {
     goToStep,
   } = useWizardForm({
     course: queryParams.course,
-    cohort: queryParams.cohort ?? '',
+    branch: queryParams.branch ?? '',
     studentName: queryParams.studentName ?? '',
     studentId: queryParams.studentId ?? '',
   });

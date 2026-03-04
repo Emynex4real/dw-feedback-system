@@ -37,13 +37,13 @@ export function StudentInfoStep({ form }: StudentInfoStepProps) {
             />
             </FormField>
             
-            <FormField label="Cohort" error={errors.cohort?.message} required htmlFor="cohort">
+            <FormField label="Branch" error={errors.branch?.message} required htmlFor="branch">
             <input
-                id="cohort"
+                id="branch"
                 type="text"
-                placeholder="e.g. Batch A"
+                placeholder="e.g. Agric"
                 className={inputClass}
-                {...register('cohort')}
+                {...register('branch')}
             />
             </FormField>
         </div>

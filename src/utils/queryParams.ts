@@ -12,7 +12,7 @@ const COURSE_MAP: Record<string, Course> = {
 
 export interface ParsedQueryParams {
   course?: FeedbackFormData['course'];
-  cohort?: string;
+  branch?: string;
   studentName?: string;
   studentId?: string;
   referralSource: string;
@@ -24,19 +24,19 @@ export function parseQueryParams(search: string): ParsedQueryParams {
   const rawCourse = params.get('course')?.toLowerCase().trim();
   const course = rawCourse ? COURSE_MAP[rawCourse] : undefined;
 
-  const rawBatch = params.get('batch') || params.get('cohort');
-  const cohort = rawBatch ? normalizeCohort(rawBatch) : undefined;
+  const rawBranch = params.get('batch') || params.get('branch');
+  const branch = rawBranch ? normalizeBranch(rawBranch) : undefined;
 
   return {
     course,
-    cohort,
+    branch,
     studentName: params.get('name') ?? undefined,
     studentId: params.get('studentId') ?? params.get('sid') ?? undefined,
     referralSource: params.get('ref') || 'qr_code',
   };
 }
 
-function normalizeCohort(raw: string): string {
+function normalizeBranch(raw: string): string {
   const match = raw.match(/^(\d{4})[_-]([A-Za-z]+)$/);
   if (match) {
     return `Batch ${match[2]!.toUpperCase()} (${match[1]})`;

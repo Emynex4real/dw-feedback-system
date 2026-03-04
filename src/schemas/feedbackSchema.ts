@@ -11,10 +11,10 @@ export const feedbackSchema = z.object({
   course: z.enum(CourseOptions, {
     error: 'Please select a course',
   }),
-  cohort: z
+  branch: z
     .string()
-    .min(1, 'Cohort is required')
-    .max(50, 'Cohort must be under 50 characters'),
+    .min(1, 'Branch is required')
+    .max(50, 'Branch must be under 50 characters'),
   feedbackType: z.enum(FeedbackTypeOptions, {
     error: 'Please select a feedback type',
   }),
@@ -23,7 +23,6 @@ export const feedbackSchema = z.object({
     .string()
     .min(10, 'Message must be at least 10 characters')
     .max(1000, 'Message must be under 1000 characters'),
-  isAnonymous: z.boolean(),
 });
 
 export type FeedbackSchemaType = z.infer<typeof feedbackSchema>;

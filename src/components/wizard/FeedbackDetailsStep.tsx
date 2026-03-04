@@ -3,17 +3,14 @@ import type { FeedbackFormData } from '@/types/feedback';
 import { FeedbackTypeOptions, PriorityOptions } from '@/types/feedback';
 import { FormField } from '@/components/ui/FormField';
 import { SelectField } from '@/components/ui/SelectField';
-import { StarRating } from '@/components/ui/StarRating';
-import { ToggleSwitch } from '@/components/ui/ToggleSwitch';
-import { Bold, Italic, Link, List, Code } from 'lucide-react'; // Icons for the "Fake Toolbar"
+import { Bold, Italic, Link, List } from 'lucide-react';
 
 interface FeedbackDetailsStepProps {
   form: UseFormReturn<FeedbackFormData>;
 }
 
 export function FeedbackDetailsStep({ form }: FeedbackDetailsStepProps) {
-  const { register, control, watch, formState: { errors } } = form;
-  const isAnonymous = watch('isAnonymous');
+  const { register, control, formState: { errors } } = form;
 
   const inputClass = "w-full h-12 rounded-xl border border-gray-200 bg-gray-50/50 px-4 text-gray-900 focus:border-[#FF5500] focus:bg-white focus:ring-4 focus:ring-orange-500/10 transition-all font-medium";
 
@@ -74,21 +71,6 @@ export function FeedbackDetailsStep({ form }: FeedbackDetailsStepProps) {
               )}
             />
         </FormField>
-      </div>
-
-      {/* 4. Anonymous Toggle */}
-      <div className="pt-2 flex justify-center">
-        <Controller
-          name="isAnonymous"
-          control={control}
-          render={({ field }) => (
-            <ToggleSwitch
-              checked={field.value}
-              onChange={field.onChange}
-              label="Submit Anonymously"
-            />
-          )}
-        />
       </div>
     </div>
   );

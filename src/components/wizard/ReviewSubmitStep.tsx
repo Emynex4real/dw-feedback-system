@@ -34,8 +34,8 @@ export function ReviewSubmitStep({ form, onEdit }: ReviewSubmitStepProps) {
           <div className="grid grid-cols-2 gap-y-2 text-sm">
              <div className="text-gray-500">Course</div>
              <div className="font-semibold text-gray-900 text-right">{values.course}</div>
-             <div className="text-gray-500">Cohort</div>
-             <div className="font-semibold text-gray-900 text-right">{values.cohort}</div>
+             <div className="text-gray-500">Branch</div>
+             <div className="font-semibold text-gray-900 text-right">{values.branch}</div>
           </div>
         </div>
 

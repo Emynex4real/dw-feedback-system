@@ -10,7 +10,7 @@ export function Header() {
         </div>
         <div>
           <h1 className="text-lg font-bold tracking-tight text-gray-900">
-            Tech Academhjhjdshjdy
+            Tech Academy
           </h1>
           <p className="text-xs font-medium text-orange-600">
             Student Feedback sPortal
